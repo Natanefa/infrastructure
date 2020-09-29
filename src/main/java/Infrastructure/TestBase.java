@@ -4,25 +4,21 @@ import Infrastructure.logging.STDTimeLogger;
 
 public class TestBase {
     private WebDriverManager wdm;
+    protected TestLogger logger;
     protected TestServer server;
-    protected STDTimeLogger logger;
-
     private String browser;
 
     public void setup(){
-
-
         wdm = new WebDriverManager();
-        logger = new STDTimeLogger();
+        logger = new TestLogger();
         browser = wdm.createBrowser();
         server = new TestServer();
         String url = server.getUrl();
-        logger.log(url);
+        logger.log();
         logger.log(browser);
-
         beforeTest();
 
-    }
+      }
 
     public void tearDown(){
         wdm.destroyBrowser(browser);

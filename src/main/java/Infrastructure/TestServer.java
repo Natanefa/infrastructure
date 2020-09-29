@@ -12,7 +12,7 @@ public class TestServer {
             case "staging_env":
                 return "https://test3.test.test";
             default:
-                return "https";
+                return "";
         }
 
 
