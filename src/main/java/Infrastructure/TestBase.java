@@ -14,7 +14,7 @@ public class TestBase {
         browser = wdm.createBrowser();
         server = new TestServer();
         String url = server.getUrl();
-        logger.log();
+        logger.log(url);
         logger.log(browser);
         beforeTest();
 
@@ -23,6 +23,12 @@ public class TestBase {
     public void tearDown(){
         wdm.destroyBrowser(browser);
     }
+
+    public void beforeTest(){
+
+    }
+
+
 
 
 }
