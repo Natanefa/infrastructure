@@ -2,6 +2,7 @@ package website;
 
 import Infrastructure.TestBase;
 public class RegistrationTest extends AuthFlowBaseTest {
+    @Override
     public void beforeTest(){
         beforeAuth();
         logger.log("switch to registration page");

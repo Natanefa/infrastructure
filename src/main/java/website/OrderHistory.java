@@ -7,7 +7,7 @@ public class OrderHistory extends RestAuthBaseTest{
         logger.log("open order history");
 
     }
-    public void canOrderHistory(){
+    public void canSeeOrderHistory(){
 
     }
 }

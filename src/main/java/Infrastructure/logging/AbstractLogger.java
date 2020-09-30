@@ -1,12 +1,15 @@
-package Infrastructure;
+package Infrastructure.logging;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class TestLogger {
+public abstract class AbstractLogger {
     public static int counter = 0;
 
-    public String log(String operation){
+    public abstract void log(String msg);
+
+
+    public String getEntry(String operation) {
         counter++;
         Date curDate = new Date();
         String formateDate = new SimpleDateFormat("HH:mm:ss:SS").format(curDate.getTime());

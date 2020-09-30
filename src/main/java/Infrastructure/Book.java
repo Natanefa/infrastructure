@@ -28,6 +28,9 @@ public class Book {
         new Book(id, title, author, year, description, isbn);
     }
 
+    public Book(String s, String title_book, String s1, String description, String s2) {
+    }
+
     public String getId() {
         return id;
     }

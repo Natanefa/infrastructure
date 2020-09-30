@@ -1,16 +1,18 @@
 package Infrastructure;
 
-import Infrastructure.logging.STDTimeLogger;
+import Infrastructure.logging.AbstractLogger;
+import Infrastructure.logging.FileTestLogger;
+import Infrastructure.logging.STDTestLogger;
 
 public class TestBase {
     private WebDriverManager wdm;
-    protected TestLogger logger;
+    protected AbstractLogger logger;
     protected TestServer server;
     private String browser;
 
     public void setup(){
         wdm = new WebDriverManager();
-        logger = new TestLogger();
+        logger = getLogger();
         browser = wdm.createBrowser();
         server = new TestServer();
         String url = server.getUrl();
@@ -25,6 +27,11 @@ public class TestBase {
     }
 
     public void beforeTest(){
+
+    }
+
+    public AbstractLogger getLogger(){
+        return ConfigurationManager.getInstance().getCurrentEnvironment().equals("local") ? new STDTestLogger() : new FileTestLogger();
 
     }
 

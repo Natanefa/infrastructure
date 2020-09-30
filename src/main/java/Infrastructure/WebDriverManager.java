@@ -6,7 +6,7 @@ public class WebDriverManager {
         switch (testBrowser){
             case "chrome": return "new chrome driver";
             case "firefox": return "new firefox driver";
-            default: "opera";
+            default: return "";
         }
     }
 
@@ -15,4 +15,5 @@ public class WebDriverManager {
             System.out.println("browser closed");
         }
     }
+
 }

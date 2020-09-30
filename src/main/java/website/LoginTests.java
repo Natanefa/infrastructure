@@ -3,6 +3,7 @@ package website;
 import Infrastructure.TestBase;
 
 public class LoginTests extends AuthFlowBaseTest {
+    @Override
     public void beforeTest(){
         beforeAuth();
         logger.log("fill login");

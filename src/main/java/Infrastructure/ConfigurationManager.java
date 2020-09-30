@@ -28,6 +28,11 @@ public class ConfigurationManager {
 
     }
 
+    public  String getCurrentEnvironment(){
+        return getEnvironmentVariebleDefault("runEnv", "local");
+
+    }
+
 
 
 
