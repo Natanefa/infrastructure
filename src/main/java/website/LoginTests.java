@@ -5,7 +5,7 @@ import Infrastructure.TestBase;
 public class LoginTests extends AuthFlowBaseTest {
     @Override
     public void beforeTest(){
-        beforeAuth();
+        super.beforeTest();
         logger.log("fill login");
 
     }

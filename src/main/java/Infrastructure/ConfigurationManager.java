@@ -33,6 +33,11 @@ public class ConfigurationManager {
 
     }
 
+    public  String getRunOn(){
+        return getEnvironmentVariebleDefault("runOn", "local");
+
+    }
+
 
 
 

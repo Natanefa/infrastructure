@@ -10,32 +10,35 @@ public class TestBase {
     protected TestServer server;
     private String browser;
 
-    public void setup(){
-        wdm = new WebDriverManager();
+    public void setup() {
+        wdm = new DefaultWebDriverManager();
         logger = getLogger();
-        browser = wdm.createBrowser();
+        browser = wdm.getBrowser();
         server = new TestServer();
         String url = server.getUrl();
         logger.log(url);
         logger.log(browser);
         beforeTest();
 
-      }
+    }
 
-    public void tearDown(){
+    public void tearDown() {
         wdm.destroyBrowser(browser);
+        afterTest();
     }
 
-    public void beforeTest(){
-
+    public void beforeTest() {
+        logger.atStart();
     }
 
-    public AbstractLogger getLogger(){
+    public void afterTest() {
+        logger.atFinish();
+    }
+
+    public AbstractLogger getLogger() {
         return ConfigurationManager.getInstance().getCurrentEnvironment().equals("local") ? new STDTestLogger() : new FileTestLogger();
 
     }
-
-
 
 
 }
