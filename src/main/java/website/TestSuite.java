@@ -25,10 +25,5 @@ public class TestSuite {
 
     }
 
-    new TestURL.Builder().withProtocol("https://")
-        .withDomain("google.com.ua")
-        .withPort("80")
-        .withPath("/search")
-        .withParams("test")
-        .build();
+
 }

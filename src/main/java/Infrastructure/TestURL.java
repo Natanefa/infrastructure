@@ -31,7 +31,7 @@ public class TestURL {
         }
 
         public Builder withPort(String port) {
-            url.port = ":" + port:
+            url.port = ":" + port;
             return this;
         }
 
@@ -53,8 +53,8 @@ public class TestURL {
 
         public String build() {
             url.domain = url.domain.endsWith(".") ? url.domain.substring(0, url.domain.length() - 1) : url.domain;
-            return new StringBuilder().append(url.protocol).
-                    append(url.domain)
+            return new StringBuilder().append(url.protocol)
+                    .append(url.domain)
                     .append(url.port)
                     .append(url.path)
                     .append(url.params).toString();
