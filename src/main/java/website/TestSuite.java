@@ -1,5 +1,8 @@
 package website;
 
+import Infrastructure.TestURL;
+import Infrastructure.TestURL.Builder;
+
 public class TestSuite {
     public static void main(String[] args) {
         LoginTests test1 = new LoginTests();
@@ -21,4 +24,11 @@ public class TestSuite {
         test2.tearDown();
 
     }
+
+    new TestURL.Builder().withProtocol("https://")
+        .withDomain("google.com.ua")
+        .withPort("80")
+        .withPath("/search")
+        .withParams("test")
+        .build();
 }
